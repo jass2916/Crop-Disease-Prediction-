@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriScience AI Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Scan History</h3>
+        <div id="historyList"></div>
+    </div>
+
+    <div class="main">
+        <div class="card">
+            <h1>AgriScience AI</h1>
+            
+            <div class="media-container" id="mediaBox">
+                <img id="displayMedia" style="display:none;">
+                <video id="videoFeed" autoplay muted style="display:none;"></video>
+                <canvas id="detectionCanvas"></canvas>
+            </div>
+
+            <div id="loader" class="spinner"></div>
+            <div id="status">Ready for Analysis</div>
+
+            <div class="controls">
+                <input type="file" id="fileInput" hidden accept="image/*,video/*">
+                <button class="btn" onclick="document.getElementById('fileInput').click()">📁 Select File</button>
+                <button class="btn btn-video" id="toggleVideo">📷 Camera</button>
+                <button class="btn btn-analyze" id="analyzeBtn">🚀 Analyze Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
